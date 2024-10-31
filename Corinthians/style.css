@@ -1,0 +1,12 @@
+#meuElemento {
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+}
+
+.square {
+    border-radius: 0%; /*Borda quadrada*/
+}
+.circle {
+    border-radius: 100%; /*Borda arredondada*/
+}
