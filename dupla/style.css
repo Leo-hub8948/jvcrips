@@ -10,12 +10,13 @@
 }
 
 .section02 {
-    background-color: brown;
+    background-color: white;
     padding: 15vh;
-    color: antiquewhite;
+    color: black;
 }
 
 .section03 {
-    background-color: antiquewhite;
+    background-color: black;
     padding: 20vh;
+    color: white;
 }
