@@ -1,0 +1,20 @@
+.carousel-conteiner {
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
