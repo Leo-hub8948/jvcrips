@@ -1,28 +1,34 @@
-// selecione o elemento que contém todas as imagens do carrosel
-const track = document.getElementByid('carouselTrack');
+// Seleciona o elemento que contém todas as imagens do carrossel
+const track = document.getElementById('carouselTrack');
 
-// Obtém o número de imagens no carrosel
+// Obtém o número de imagens no carrossel
 const items = document.querySelectorAll('.carousel-item');
 let index = 0; // índice que rastreia a imagem atual
 
-// função que move o carrosel para a próxima imagem
+// Função que move o carrossel para a próxima imagem
 function moveCarousel() {
-    //incrementa o ídice para avançar uma imagem
+    // Incrementa o índice para avançar uma imagem
     index++;
 
-    // Verifica se o índice chegou á ultima imagem clonada
-    if (index >= items.length - 1){
+    // Verifica se o índice chegou à última imagem
+    if (index >= items.length) {
         // Pequeno atraso para permitir que a transição termine
         setTimeout(() => {
-            track.syle.transition = 'none'; // Remove a animação
-            index = 0; // volta ao início (primeiro imagem)
-            track.style.transform = `translateX(0)`; // Move para a primeira imagem 
-        }, 500); // tempo suficiente para completar a transição vísivel
+            track.style.transition = 'none'; // Remove a animação
+            index = 0; // Volta ao início (primeira imagem)
+            track.style.transform = `translateX(0)`; // Move para a primeira imagem
+        }, 500); // Tempo suficiente para completar a transição visível
+
+        // Após o atraso, reinicia a animação
+        setTimeout(() => {
+            track.style.transition = 'transform 0.5s ease'; // Reaplica a animação
+        }, 600); // Tempo suficiente para esperar o delay
     } else {
-        //Move o carrossel para a próxima imagem
+        // Move o carrossel para a próxima imagem
         track.style.transition = 'transform 0.5s ease'; // Adiciona a animação
-        track.syle.transform = `translateX(-${index * 100}%)`; // Desloca o carrosel
+        track.style.transform = `translateX(-${index * 100}%)`; // Desloca o carrossel
     }
 }
 
-setInterval(moveCarousel, 1000);
+// Chama a função de transição a cada 3 segundos (ajuste o intervalo conforme necessário)
+setInterval(moveCarousel, 3000);
